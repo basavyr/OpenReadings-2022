@@ -21,3 +21,7 @@ The materials used for documentation, extracting formulas, and obtaining numeric
 5. ![raduta](2022-01-09-11-38-44.png)
 
    - The formulas used in the research are presented in the following paper.
+
+6. ![chen](2022-01-09-11-47-30.png)
+
+   - Discussion of the first example of even-even wobbling nucleus. The wobbling excitations are built on a two-quasiparticle wobbling band.
