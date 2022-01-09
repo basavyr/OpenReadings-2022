@@ -16,7 +16,7 @@ The materials used for documentation, extracting formulas, and obtaining numeric
 
 4. ![nandi](2022-01-09-11-36-52.png)
 
-   - The wobbling structure of ${183}$Au is discussed in terms of the wobbling bands that are identified within the rotational spectra of the nucleus.
+   - The wobbling structure of $^{183}$Au is discussed in terms of the wobbling bands that are identified within the rotational spectra of the nucleus.
 
 5. ![raduta](2022-01-09-11-38-44.png)
 
