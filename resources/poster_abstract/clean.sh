@@ -7,3 +7,4 @@ rm *.log > /dev/null 2>&1
 rm *.lyx~ > /dev/null 2>&1
 rm *.synctex.gz > /dev/null 2>&1
 rm *.fls > /dev/null 2>&1
+rm __latexindent_temp.tex > /dev/null 2>&1
