@@ -4,6 +4,8 @@
 - Data are provided through the work: 96Zr(13C,4nγ):XUNDL-3 [2019Ti02] (unevaluated)
 """
 
+import plotter
+
 
 class Tools:
     """
@@ -128,7 +130,8 @@ def main():
     energies = Tools.keV_to_MeV(Band_A.band_A_energies)
     print(energies)
     energies_normed = Tools.normalize_energies(energies, energies[0])
-    print(energies_normed)
+    plotter.plot_data([x for x in range(len(energies_normed))],
+                      energies_normed, 'test', 'band-A')
 
 
 if __name__ == '__main__':
