@@ -48,7 +48,8 @@ class Tools:
         energies.sort()
         # print(f'After sorting ->{energies}')
 
-        normalized_energies = [float(x - band_head) for x in energies]
+        normalized_energies = [round(float(x - band_head), 4)
+                               for x in energies]
 
         return normalized_energies
 
@@ -120,7 +121,9 @@ class Band_C:
 
 
 def main():
-    print(Tools.keV_to_MeV(Band_A.band_A_energies))
+    energies = Tools.keV_to_MeV(Band_A.band_A_energies)
+    energies_normed = Tools.normalize_energies(energies, energies[0])
+    print(energies_normed)
 
 
 if __name__ == '__main__':
