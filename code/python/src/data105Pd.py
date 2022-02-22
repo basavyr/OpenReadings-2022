@@ -5,6 +5,18 @@
 """
 
 
+class Tools:
+    @staticmethod
+    def ExtractSpins(raw_string):
+        # separate all the spins by the commmas
+        extracted_spins = raw_string.split(',')
+        # only get the integer part after splitting is done
+        # with the integer part determined, compute the numerical values of each spins
+        spins = [float(x[:-2]) / 2 for x in extracted_spins]
+
+        return spins
+
+
 class Band_B:
     """
     - the collection of energies belonging to the rotational structure B
@@ -48,3 +60,17 @@ class Band_C:
     band_C_spins = '29/2,25/2,21/2'
     band_C_energies = [4955, 3859, 2900]
     band_C_transitions = [1097, 959]
+
+
+def main():
+    a_band_spins = Tools.ExtractSpins(Band_A.band_A_spins)
+    b_band_spins = Tools.ExtractSpins(Band_B.band_B_spins)
+    c_band_spins = Tools.ExtractSpins(Band_C.band_C_spins)
+
+    print(a_band_spins)
+    print(b_band_spins)
+    print(c_band_spins)
+
+
+if __name__ == '__main__':
+    main()
