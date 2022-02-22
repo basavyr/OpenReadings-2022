@@ -70,7 +70,7 @@ class Band_B:
 
     band_B_energies = [8405, 7190, 6071, 4952, 3800, 2700, 1742, 970, 489]
     """ the absolute energies """
-
+    band_B_spins = Tools.ExtractSpins(raw_spins)
     """ the absolute spins """
     band_B_transitions = [1302, 1148, 1064, 1089, 918, 814, 604]
     """ the in-band transition energies (DeltaI=2) """
@@ -87,12 +87,12 @@ class Band_A:
     SIGNATURE = -0.5
     PARITY = -1
 
-    band_A_spins = '43/2,39/2,35/2,31/2,27/2,23/2,19/2,15/2,11/2'
+    raw_spins = '43/2,39/2,35/2,31/2,27/2,23/2,19/2,15/2,11/2'
     """ raw string with the spin values extracted from the pdf file """
 
     band_A_energies = [8405, 7190, 6071, 4952, 3800, 2700, 1742, 970, 489]
     """ the absolute energies """
-
+    band_A_spins = Tools.ExtractSpins(raw_spins)
     """ the absolute spins """
     band_A_transitions = [1215, 1119, 1119, 1152, 1100, 958, 481]
     """ the in-band transition energies (DeltaI=2) """
@@ -114,7 +114,7 @@ class Band_C:
 
     band_C_energies = [4955, 3859, 2900]
     """ the absolute energies """
-
+    band_C_spins = Tools.ExtractSpins(raw_spins)
     """ the absolute spins """
     band_C_transitions = [1097, 959]
     """ the in-band transition energies (DeltaI=2) """
