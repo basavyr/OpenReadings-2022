@@ -29,7 +29,7 @@ class Tools:
         - 1 MeV is 1000 keV
         """
 
-        # also sort the energies within ascending order
+        # sort the energies within ascending order
         # print(f'Before sorting ->{energies}')
         energies.sort()
         # print(f'After sorting ->{energies}')
@@ -43,6 +43,7 @@ class Tools:
         """
         - subtract the value of the band-head (first energy within the YRAST band) from all the energies 
         """
+
         # sort the energies in ascending order
         # print(f'Before sorting ->{energies}')
         energies.sort()
@@ -58,8 +59,9 @@ class Band_B:
     """
     - the collection of energies belonging to the rotational structure B
     - it represents the band built on the neutron h=11/2
-    - signature: \alpha=+1/2
-    - negative parity spin states: \pi=-1
+    - signature: alpha=+1/2
+    - negative parity spin states
+    - pi=-1
     """
 
     SIGNATURE = +0.5
@@ -80,8 +82,9 @@ class Band_A:
     """
     - the collection of energies belonging to the rotational structure A
     - it represents the YRAST band built on the neutron h = 11 / 2
-    - signature: \alpha = -1 / 2
-    - negative parity spin states: \pi=-1
+    - signature: alpha = -1 / 2
+    - negative parity spin states
+    - pi=-1
     """
 
     SIGNATURE = -0.5
@@ -104,6 +107,7 @@ class Band_C:
     - similar parity as the Band A
     - built on the neutron h=11/2 configuration
     - opposite signature as of Band A: \alpha=+1/2
+    - negative parity states
     """
 
     SIGNATURE = +0.5
@@ -122,6 +126,7 @@ class Band_C:
 
 def main():
     energies = Tools.keV_to_MeV(Band_A.band_A_energies)
+    print(energies)
     energies_normed = Tools.normalize_energies(energies, energies[0])
     print(energies_normed)
 
