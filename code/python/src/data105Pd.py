@@ -29,10 +29,12 @@ class Tools:
         - 1 MeV is 1000 keV
         """
 
-        energies_mev = [float(x / 1000) for x in energies]
-
         # also sort the energies within ascending order
-        energies_mev.sort()
+        # print(f'Before sorting ->{energies}')
+        energies.sort()
+        # print(f'After sorting ->{energies}')
+
+        energies_mev = [float(x / 1000) for x in energies]
 
         return energies_mev
 
@@ -41,11 +43,12 @@ class Tools:
         """
         - subtract the value of the band-head (first energy within the YRAST band) from all the energies 
         """
+        # sort the energies in ascending order
+        # print(f'Before sorting ->{energies}')
+        energies.sort()
+        # print(f'After sorting ->{energies}')
 
         normalized_energies = [float(x - band_head) for x in energies]
-
-        # sort the energies in ascending order
-        normalized_energies.sort()
 
         return normalized_energies
 
@@ -61,9 +64,12 @@ class Band_B:
     SIGNATURE = +0.5
     PARITY = -1
 
+    raw_spins = '41/2,37/2,33/2,29/2,25/2,21/2,17/2,13/2'
+    """ raw string with the spin values extracted from the pdf file """
+
     band_B_energies = [8405, 7190, 6071, 4952, 3800, 2700, 1742, 970, 489]
     """ the absolute energies """
-    band_B_spins = '41/2,37/2,33/2,29/2,25/2,21/2,17/2,13/2'
+
     """ the absolute spins """
     band_B_transitions = [1302, 1148, 1064, 1089, 918, 814, 604]
     """ the in-band transition energies (DeltaI=2) """
@@ -80,9 +86,12 @@ class Band_A:
     SIGNATURE = -0.5
     PARITY = -1
 
+    band_A_spins = '43/2,39/2,35/2,31/2,27/2,23/2,19/2,15/2,11/2'
+    """ raw string with the spin values extracted from the pdf file """
+
     band_A_energies = [8405, 7190, 6071, 4952, 3800, 2700, 1742, 970, 489]
     """ the absolute energies """
-    band_A_spins = '43/2,39/2,35/2,31/2,27/2,23/2,19/2,15/2,11/2'
+
     """ the absolute spins """
     band_A_transitions = [1215, 1119, 1119, 1152, 1100, 958, 481]
     """ the in-band transition energies (DeltaI=2) """
@@ -99,24 +108,19 @@ class Band_C:
     SIGNATURE = +0.5
     PARITY = -1
 
-    band_C_spins = '29/2,25/2,21/2'
+    raw_spins = '29/2,25/2,21/2'
+    """ raw string with the spin values extracted from the pdf file """
+
     band_C_energies = [4955, 3859, 2900]
+    """ the absolute energies """
+
+    """ the absolute spins """
     band_C_transitions = [1097, 959]
+    """ the in-band transition energies (DeltaI=2) """
 
 
 def main():
-    a_band_spins = Tools.ExtractSpins(Band_A.band_A_spins)
-    b_band_spins = Tools.ExtractSpins(Band_B.band_B_spins)
-    c_band_spins = Tools.ExtractSpins(Band_C.band_C_spins)
-
-    print(a_band_spins)
-    print(b_band_spins)
-    print(c_band_spins)
-
-    a_band_energies = Tools.keV_to_MeV(Band_A.band_A_energies)
-
-    print(Band_A.band_A_energies)
-    print(a_band_energies)
+    print(Tools.keV_to_MeV(Band_A.band_A_energies))
 
 
 if __name__ == '__main__':
