@@ -128,10 +128,12 @@ class Band_C:
 
 def main():
     energies = Tools.keV_to_MeV(Band_A.band_A_energies)
-    print(energies)
     energies_normed = Tools.normalize_energies(energies, energies[0])
     plotter.plot_data([x for x in range(len(energies_normed))],
                       energies_normed, 'test', 'band-A')
+
+    bands = [[[1, 2, 3], [1, 1, 5]], [[1, 2, 3], [2, 2, 6]]]
+    plotter.plot_bands(bands, ['band1', 'band2'], 'band-plot')
 
 
 if __name__ == '__main__':
