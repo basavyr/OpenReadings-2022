@@ -4,7 +4,7 @@ from matplotlib import pyplot as plt, style
 plot_file_location = lambda plot_file: f'../plots/{plot_file}.pdf'
 
 
-plot_styles = ['-or', '--ob', '-k']
+plot_styles = ['-or', '-*b', '-k']
 
 
 def plot_data(x_data, y_data, plot_file, plot_label):
